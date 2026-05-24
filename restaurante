@@ -1,0 +1,57 @@
+menu = [["hamburguesa", "comida rapida", 40000], 
+
+        ["hamburguesa especial", "comida rapida", 50000], 
+
+        ["picada", "comida rapida", 15000], 
+
+        ["picada familiar", "comida rapida", 60000], 
+
+        ["perro suizo", "comida rapida", 25000], 
+
+        ["cocacola", "bebida", 6000]] 
+
+ 
+
+def calcular_precio_final(producto, categoria_objetivo, umbral): 
+
+    nombre = producto [0] 
+
+    categoria = producto [1] 
+
+    precio_base = producto [2] 
+
+     
+
+    if categoria == categoria_objetivo and precio_base > umbral: 
+
+     descuento = precio_base * 0.15 
+
+     precio_final = precio_base - descuento 
+
+      
+
+    else: 
+
+          precio_final = precio_base 
+
+         
+
+    return precio_final 
+
+     
+
+categoria_promo = "comida rapida" 
+
+umbral_precio = 20000 
+
+print(f"{'producto': <20} | {'precio_base': <12} | {'precio_final': <12}") 
+
+print("_"*45) 
+
+ 
+
+for producto in menu: 
+
+    precio_f = calcular_precio_final(producto, categoria_promo, umbral_precio) 
+
+    print(f"{producto[0]: <20} | ${producto[2]: <10} | ${precio_f: <10.2f}") 
